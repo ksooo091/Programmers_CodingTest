@@ -17,7 +17,7 @@ class Solution {
         HashMap<String, Integer> reported = new HashMap<>(); //신고당한유저
         HashMap<String, Integer> reportuser = new HashMap<>(); ///메일받을  유저
         ArrayList<String> baneduser = new ArrayList<>(); // 정지유저
-        ArrayList<Integer> answerA = new ArrayList<>(); // 답
+        ArrayList<Integer> result = new ArrayList<>(); // 답
 
         int usercnt;
         String reportedUser;
@@ -58,20 +58,20 @@ class Solution {
 
         for (int j = 0; j < id_list.length; j++) {
             int finalJ = j;
-           answerA.add(0);
+            result.add(0);
             reportuser.forEach((a, b) -> {
 
                 if (id_list[finalJ].equals(a)) {
 
-                    answerA.set(finalJ,b);
+                    result.set(finalJ,b);
                 }}
             );
 
         }
 
 
-        for (int i = 0; i < answerA.size(); i++) {
-            answer[i] = answerA.get(i);
+        for (int i = 0; i < result.size(); i++) {
+            answer[i] = result.get(i);
         }
 
         return answer;
